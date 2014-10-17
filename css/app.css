@@ -1,0 +1,26 @@
+.word {
+    color: purple;
+}
+.var {
+    color: green;
+}
+.comment {
+    color: red;
+}
+.special {
+    color: blue;
+}
+.quoted {
+    color: orange;
+}
+.c-block {
+    border: 1px solid #B3DDBD;
+    padding: 5px;
+    margin: 5px;
+}
+.c-box {
+    white-space: pre;
+    padding-left: 2px;
+    line-height: 1.6em;
+    word-wrap: break-word;
+}
