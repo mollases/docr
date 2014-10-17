@@ -1,8 +1,7 @@
-'use strict';
-
 angular.module('docrjs')
     .controller('ReadingController',
         function($scope, $http) {
+            'use strict';
 
             /**
              * Splits on \n
@@ -23,7 +22,7 @@ angular.module('docrjs')
             $scope.go = function() {
             $http.get($scope.stringBuilder()).success(function(data) {
             data = atob(data.content);
-            // $http.get('/scripts/controllers/docr.js').success(function(data) {
+                // TODO: this actually says:  ...replace(/</g, ' & l t');
                 data = data.replace(/</g, '&lt');
 
 
