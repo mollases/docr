@@ -18,13 +18,4 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch'
-  ])
-  .config(function($urlRouterProvider, $stateProvider) {
-    $urlRouterProvider.otherwise('/docr');
-    $stateProvider
-      .state('doc', {
-        url: '/docr',
-        templateUrl: 'partials/docr.html',
-        controller: 'ReadingController'
-      });
-  });
+  ]);
