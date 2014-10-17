@@ -3,6 +3,12 @@
 angular.module('docrjs')
     .controller('ReadingController',
         function($scope, $http) {
+
+            /**
+             * Splits on \n
+             * @param  {String} data a string with any number of '\n'
+             * @return {Array[String]}      an array with an index per '\n' (\n free)
+             */
             var perLineContent = function(data) {
                 return data.split('\n');
             };
@@ -38,14 +44,12 @@ angular.module('docrjs')
 
 
                             if (!active) {
-                                newContent = newContent.replace(/ /g, '&nbsp');
+                                // TODO: find '//', ignore htp://
                                 newContent = newContent.replace(/\".*?\"/g, '<span class="quoted">$&</span>');
                                 newContent = newContent.replace(/\(|\)|\{|}|\+|\*|\[|]|;|\.|\!\?/g, '<span class="special">$&</span>');
                                 newContent = newContent.replace(/\'.*\'/g, '<span class="quoted">$&</span>');
-                                newContent = newContent.replace(/(&nbsp|\b)(function|var|if|in|for|else|while|return|this)(\b|&nbsp)/g, '<span class="word">$&</span>');
-                                newContent = newContent.replace(/[^\:]\/\/.*/g, '<span class="comment">$&</span>');
-
-                                // newContent = newContent.replace('=(?![^<]*>|[^<>]*<','<span class="special">$&</span>');
+                                newContent = newContent.replace(/\b(function|var|if|in|for|else|while|return|this)(\b)/g, '<span class="word">$&</span>');
+                                newContent = newContent.replace(/[^http\:]\/\/.*/g, '<span class="comment">$&</span>');
                             }
                         }
 
