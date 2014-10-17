@@ -13,9 +13,9 @@ angular.module('docrjs')
                 return data.split('\n');
             };
 
-            $scope.user = 'angular';
-            $scope.repo = 'angular.js';
-            $scope.filename = 'lib/versions/version-info.js';
+            $scope.user = 'mollases';
+            $scope.repo = 'docr';
+            $scope.filename = 'js/controllers/docr.js';
             $scope.stringBuilder = function() {
                 return 'https://api.github.com/repos/' + $scope.user + '/' + $scope.repo + '/contents/' + $scope.filename;
             };
@@ -45,11 +45,11 @@ angular.module('docrjs')
 
                             if (!active) {
                                 // TODO: find '//', ignore htp://
-                                newContent = newContent.replace(/[^http\:]\/\/.*/g, '<span class="comment">$&</span>');
                                 newContent = newContent.replace(/\".*?\"/g, '<span class="quoted">$&</span>');
                                 newContent = newContent.replace(/\(|\)|\{|}|\+|\*|\[|]|;|\.|\!\?/g, '<span class="special">$&</span>');
                                 newContent = newContent.replace(/\'.*\'/g, '<span class="quoted">$&</span>');
                                 newContent = newContent.replace(/\b(function|var|if|in|for|else|while|return|this)(\b)/g, '<span class="word">$&</span>');
+                                newContent = newContent.replace(/[^http\:]\/\/.*/g, '<span class="comment">$&</span>');
                             }
                         }
 
