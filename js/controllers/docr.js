@@ -45,11 +45,11 @@ angular.module('docrjs')
 
                             if (!active) {
                                 // TODO: find '//', ignore htp://
+                                newContent = newContent.replace(/[^http\:]\/\/.*/g, '<span class="comment">$&</span>');
                                 newContent = newContent.replace(/\".*?\"/g, '<span class="quoted">$&</span>');
                                 newContent = newContent.replace(/\(|\)|\{|}|\+|\*|\[|]|;|\.|\!\?/g, '<span class="special">$&</span>');
                                 newContent = newContent.replace(/\'.*\'/g, '<span class="quoted">$&</span>');
                                 newContent = newContent.replace(/\b(function|var|if|in|for|else|while|return|this)(\b)/g, '<span class="word">$&</span>');
-                                newContent = newContent.replace(/[^http\:]\/\/.*/g, '<span class="comment">$&</span>');
                             }
                         }
 

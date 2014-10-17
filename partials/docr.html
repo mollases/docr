@@ -34,11 +34,11 @@
     <div class="clearfix c-block" ng-repeat="entry in content">
 
         <code class="col-md-6">
-            <div class="comment-box c-box" ng-repeat="comment in entry.comment">{{comment.num}}<span ng-bind-html="comment.content" /></div>
+            <div class="comment-box c-box" ng-repeat="comment in entry.comment"><span ng-bind-html="comment.content" /></div>
         </code>
 
         <code class="col-md-6">
-            <div class="code-box c-box" ng-repeat="code in entry.code">{{code.num}}<span ng-bind-html="code.content" /></div>
+            <div class="code-box c-box" ng-repeat="code in entry.code"><span ng-bind-html="code.content" /></div>
         </code>
 
     </div>
