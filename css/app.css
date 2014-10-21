@@ -24,3 +24,8 @@
     line-height: 1.6em;
     word-wrap: break-word;
 }
+
+.line-num {
+    color:green;
+    padding-right: 5px;
+}
