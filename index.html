@@ -62,10 +62,10 @@
             </div>
         </div>
         <div class="clearfix c-block" ng-repeat="entry in content">
-            <code class="col-md-5">
+            <code class="col-md-6">
                 <div class="comment-box c-box" ng-repeat="comment in entry.comment"><span class="line-num">{{comment.num}}</span><span ng-bind-html="comment.content" /></div>
             </code>
-            <code class="col-md-5">
+            <code class="col-md-6">
                 <div class="code-box c-box" ng-repeat="code in entry.code"><span class="line-num">{{code.num}}</span><span ng-bind-html="code.content" /></div>
             </code>
         </div>
